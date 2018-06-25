@@ -24,7 +24,6 @@ document.getElementById("prev").addEventListener("click", nxtprev);
 
 function nxtprev(event) {
   const btn = event.target.id;
-
   if (btn == "next") {
     nxt++;
     nxt < images.length ? (nxt = nxt) : (nxt = 0);
@@ -34,4 +33,10 @@ function nxtprev(event) {
   }
 
   show.src = images[nxt];
+  history(images[nxt]);
+}
+
+function history(image) {
+  document.querySelector("#history").innerHTML += `<img
+   src=${image} class='history' width="112" height="70">`;
 }
