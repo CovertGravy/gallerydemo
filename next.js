@@ -11,13 +11,13 @@ $(document).ready(function() {
         .attr("href", function(i, val) {
           if (val.match(/\.jpeg|\.png|\.gif|\.jpg/)) {
             images.push(val);
-            console.log(images);
           }
         });
     }
   });
 });
 const show = document.getElementById("pic");
+setTimeout(() => (show.src = images[0]), 1000);
 
 document.getElementById("next").addEventListener("click", nxtprev);
 document.getElementById("prev").addEventListener("click", nxtprev);
